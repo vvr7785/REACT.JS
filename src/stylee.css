@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    }
+    .APP{
+        display: flex;
+        justify-content: space-between;
+        padding:0 15rem;
+        width:50%;
+        background-color: #282c34;
+        color:white;
+        border-radius:5px 5px 5px 5px;
+      }

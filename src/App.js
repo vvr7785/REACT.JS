@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Employees from './Employees'
 
 function App() {
+  const data = [
+    {id:1001,name:'Rahul',workexp:'2 years',dob:new Date(2000,5,11)},
+    {id:1002,name:'Shiva',workexp:'5 years',dob:new Date(1996,4,16)},
+    {id:1003,name:'Sudheer',workexp:'10 years',dob:new Date(1987,10,7)}
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Employees details={data}/>
     </div>
   );
 }

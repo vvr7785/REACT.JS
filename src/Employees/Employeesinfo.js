@@ -2,7 +2,7 @@ import './stylee.css'
 import EmployeesDOB from "./EmployeesDOB";
 function Employeesinfo(props){
     return (
-        <div  className="APP">
+        <div  className="App">
             <div>
             <EmployeesDOB date = {props.date}/>
             </div>

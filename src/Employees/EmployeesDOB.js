@@ -3,7 +3,7 @@ function EmployeesDOB(props){
     const year = props.date.getFullYear();
     const day = props.date.toLocaleString('en-US',{day:'2-digit'});
     return(
-        <div>
+        <div class="DATE">
         <div>
             {month}
         </div>

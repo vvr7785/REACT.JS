@@ -1,4 +1,4 @@
-import Employeesinfo from './Employeesinfo';
+import Employeesinfo from "./Employeesinfo"
 function Employees(props){
     return (
         <div>

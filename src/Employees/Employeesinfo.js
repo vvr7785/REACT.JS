@@ -6,9 +6,7 @@ function Employeesinfo(props){
             <div>
             <EmployeesDOB date = {props.date}/>
             </div>
-            <div>
             {props.name}
-            </div>
             <div>
             {props.workexp}
             </div>

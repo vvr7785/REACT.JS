@@ -9,15 +9,15 @@ function expenseReducer(state, action) {
     const updatedExpenses = [...state]
 
     if(action.type === 'ADD_EXPENSE') {
-        const expenseData = {
+        const employeeData = {
             ...action.payload,
             id: Math.random().toString()
           };
-        updatedExpenses.push(expenseData)
+        updatedExpenses.push(employeeData)
     }
 
-    if(action.type === 'REMOVE_EXPENSE') {
-        // logic to remove expense
+    if(action.type === 'REMOVE_EMPLOYEE') {
+        // logic to remove employee
     }
     return updatedExpenses;
 }
@@ -30,7 +30,7 @@ export default function EmployeeContextProvider({ children }) {
         {id:1003,name:'Sudheer',workexp:10,date:new Date(1987,10,7)}
       ];
 
-    const [expenses, dispatch] = useReducer(expenseReducer, DUMP_EMPLOYEES);
+    const [employees, dispatch] = useReducer(expenseReducer, DUMP_EMPLOYEES);
 
     //const [expenses, setExpenses] = useState(DUMP_EXPENSES);
 
@@ -44,7 +44,7 @@ export default function EmployeeContextProvider({ children }) {
     }
 
     const contextValue = {
-        items: expenses,
+        items: employees,
         onSaveExpenseData: addExpenseHandler
       };
 

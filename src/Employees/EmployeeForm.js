@@ -4,7 +4,7 @@ import './EmployeeForm.css'
 import { useContext } from 'react';
 import { EmployeeContext } from './employee-context';
 import { useDispatch } from 'react-redux';
-
+import { employeeActions } from '../Store';
 const EmployeeForm = (props) => {
 
    // const { onSaveExpenseData } = useContext(ExpenseContext);
@@ -39,7 +39,7 @@ const EmployeeForm = (props) => {
         // props.onSaveExpenseData(expenseData);
         //onSaveExpenseData(expenseData);
         dispatch({type:"ADD_EXPENSE", payload: expenseData});
-
+        dispatch(employeeActions.addEmployee(expenseData));
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');

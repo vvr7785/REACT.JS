@@ -20,14 +20,14 @@ const Employees = (props) => {
         setFilteredYear(selectedYear);
     }
 
-    const filteredExpenses = items.filter(expense => {
-        return expense.date.getFullYear().toString() === filteredYear;
+    const filteredEmployees = items.filter(employee => {
+        return employee.date.getFullYear().toString() === filteredYear;
     });
 
     return (
         <Card className="expenses">
             <EmployeeFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-            <EmployeeList items={filteredExpenses} />
+            <EmployeeList items={filteredEmployees} />
         </Card>
     )
 }

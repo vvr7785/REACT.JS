@@ -2,24 +2,24 @@ import { createContext, useReducer, useState } from 'react'
 
 export const EmployeeContext = createContext({
     items: [],
-    onSaveExpenseData: () => { },
+    onSaveEmployeeData: () => { },
 });
 
-function expenseReducer(state, action) {
-    const updatedExpenses = [...state]
+function employeeReducer(state, action) {
+    const updatedEmployees = [...state]
 
-    if(action.type === 'ADD_EXPENSE') {
+    if(action.type === 'ADD_EMPLOYEE') {
         const employeeData = {
             ...action.payload,
             id: Math.random().toString()
           };
-        updatedExpenses.push(employeeData)
+        updatedEmployees.push(employeeData)
     }
 
     if(action.type === 'REMOVE_EMPLOYEE') {
         // logic to remove employee
     }
-    return updatedExpenses;
+    return updatedEmployees;
 }
 
 export default function EmployeeContextProvider({ children }) {
@@ -30,22 +30,21 @@ export default function EmployeeContextProvider({ children }) {
         {id:1003,name:'Sudheer',workexp:10,date:new Date(1987,10,7)}
       ];
 
-    const [employees, dispatch] = useReducer(expenseReducer, DUMP_EMPLOYEES);
+    const [employees, dispatch] = useReducer(employeeReducer, DUMP_EMPLOYEES);
 
-    //const [expenses, setExpenses] = useState(DUMP_EXPENSES);
 
-    const addExpenseHandler = expense => {
+    const addEmployeeHandler = employee => {
         dispatch(
             {
-                type: 'ADD_EXPENSE',
-                payload: expense
+                type: 'ADD_EMPLOYEE',
+                payload: employee
             }
         );
     }
 
     const contextValue = {
         items: employees,
-        onSaveExpenseData: addExpenseHandler
+        onSaveEmployeeData: addEmployeeHandler
       };
 
 

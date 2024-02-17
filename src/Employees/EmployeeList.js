@@ -9,11 +9,11 @@ const EmployeeList = props => {
     return (
         <ul className="expense-list">
             {
-                props.items.map((expense) => (<EmployeeItem 
-                    key={expense.id} 
-                    name={expense.name}
-                    workexp={expense.workexp} 
-                    date={expense.date} />))
+                props.items.map((employee) => (<EmployeeItem 
+                    key={employee.id} 
+                    name={employee.name}
+                    workexp={employee.workexp} 
+                    date={employee.date} />))
             }
         </ul>
     )

@@ -7,19 +7,18 @@ import { useDispatch } from 'react-redux';
 import { employeeActions } from '../Store';
 const EmployeeForm = (props) => {
 
-   // const { onSaveExpenseData } = useContext(ExpenseContext);
    const dispatch = useDispatch();
 
-    const [enteredTitle, setEnteredTitle] = useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredName, setEnteredName] = useState('');
+    const [enteredWE, setEnteredWE] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
     const titleChangeHandler = (event) => {
-        setEnteredTitle(event.target.value);
+        setEnteredName(event.target.value);
     }
 
     const amountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value);
+        setEnteredWE(event.target.value);
     }
 
     const dateChangeHandler = (event) => {
@@ -29,19 +28,18 @@ const EmployeeForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
 
-        const expenseData = {
-            name: enteredTitle,
-            workexp: enteredAmount,
+        const employeeData = {
+            name: enteredName,
+            workexp: enteredWE,
             date: new Date(enteredDate)
         }
 
-        //console.log(expenseData);
-        // props.onSaveExpenseData(expenseData);
-        //onSaveExpenseData(expenseData);
-        //dispatch({type:"ADD_EXPENSE", payload: expenseData});
-        dispatch(employeeActions.addEmployee(expenseData));
-        setEnteredTitle('');
-        setEnteredAmount('');
+        // props.onSaveEmployeeData(employeeData);
+        //onSaveEmployeeData(employeeData);
+        //dispatch({type:"ADD_EMPLOYEE", payload: employeeData});
+        dispatch(employeeActions.addEmployee(employeeData));
+        setEnteredName('');
+        setEnteredWE('');
         setEnteredDate('');
     }
 
@@ -50,13 +48,13 @@ const EmployeeForm = (props) => {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Name</label>
-                    <input type="text" onChange={titleChangeHandler} value={enteredTitle} />
+                    <input type="text" onChange={titleChangeHandler} value={enteredName} />
                 </div>
 
 
                 <div className="new-expense__control">
                     <label>Work Experience</label>
-                    <input type="number" min="1" onChange={amountChangeHandler} value={enteredAmount} />
+                    <input type="number" min="1" onChange={amountChangeHandler} value={enteredWE} />
                 </div>
 
                 <div className="new-expense__control">

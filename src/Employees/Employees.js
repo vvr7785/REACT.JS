@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const Employees = (props) => {
 
-    // const expenseCtx = useContext(ExpenseContext);
+    // const employeeCtx = useContext(EmployeeContext);
     // THIS FUCNTION WILL BE EXECUTED BY REACT REDUX WHEN YOU USE useSELECTOR
     // ReactREdux will automatically sets subscription for this component.
     const items = useSelector(state => state.items);

@@ -38,7 +38,7 @@ const EmployeeForm = (props) => {
         //console.log(expenseData);
         // props.onSaveExpenseData(expenseData);
         //onSaveExpenseData(expenseData);
-        dispatch({type:"ADD_EXPENSE", payload: expenseData});
+        //dispatch({type:"ADD_EXPENSE", payload: expenseData});
         dispatch(employeeActions.addEmployee(expenseData));
         setEnteredTitle('');
         setEnteredAmount('');

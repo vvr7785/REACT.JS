@@ -1,4 +1,3 @@
-import EmployeeForm from "./EmployeeForm";
 import './NewEmployee.css'
 
 const NewEmployee = ({children}) => {

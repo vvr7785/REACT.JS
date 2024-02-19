@@ -1,6 +1,5 @@
 import EmployeeItem from "./EmployeeItem";
 import './EmployeeList.css'
-import DeleteData from "./DeleteData"
 
 const EmployeeList = props => {
     if (props.items.length === 0) {

@@ -1,10 +1,8 @@
-import { useState, useContext } from "react";
+import { useState} from "react";
 import Card from "../UI/Card";
 import EmployeeFilter from "./EmployeeFilter";
-import EmployeeItem from "./EmployeeItem";
 import "./Employees.css";
 import EmployeeList from "./EmployeeList";
-import { EmployeeContext } from "./employee-context";
 import { useSelector } from "react-redux";
 
 const Employees = (props) => {
@@ -14,14 +12,15 @@ const Employees = (props) => {
     // ReactREdux will automatically sets subscription for this component.
     const items = useSelector(state => state.items);
 
-    const [filteredYear, setFilteredYear] = useState("2024");
+    const [filteredYear, setFilteredYear] = useState("");
 
     const filterChangeHandler = selectedYear => {
         setFilteredYear(selectedYear);
     }
 
     const filteredEmployees = items.filter(employee => {
-        return employee.dob.getFullYear().toString() === filteredYear;
+        //return employee.dob.getFullYear().toString() === filteredYear;
+        return employee.workexp.toString() === filteredYear;
     });
 
     return (

@@ -1,13 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import EmployeeItem from './Employees/EmployeeItem';
 import Employees from './Employees/Employees';
 import NewEmployee from './Employees/NewEmployee';
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import EmployeeForm from './Employees/EmployeeForm';
-import { EmployeeContext } from './Employees/employee-context';
-import EmployeeContextProvider from './Employees/employee-context';
-import { UseSelector, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { sendEmployeeData } from './Store';
 
 const App = () => {
@@ -22,14 +18,13 @@ const App = () => {
   );
 
   return (
-    <EmployeeContextProvider >
       <div>
         <NewEmployee>
           <EmployeeForm />
         </NewEmployee>
         <Employees />
       </div>
-    </EmployeeContextProvider>
+
   );
 }
 export default App;

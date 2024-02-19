@@ -8,7 +8,7 @@ const DUMP_EMPLOYEES = [
 ];
 const initialState = {items:DUMP_EMPLOYEES};
 
-const emplopyeeSlice = createSlice({
+const employeeSlice = createSlice({
   name:'employeedetails',
   initialState : initialState,
   reducers :{
@@ -54,11 +54,11 @@ export const sendEmployeeData = (employeeData) => {
 
 
 const employeeStore = configureStore({
-reducer: emplopyeeSlice.reducer
+reducer: employeeSlice.reducer
 })
 
 export default employeeStore;
-export const employeeActions = emplopyeeSlice.actions;
+export const employeeActions = employeeSlice.actions;
 
 export const deleteEmployeeData = (employeeId) => {
 return async (dispatch) => {

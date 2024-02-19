@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import { EmployeeContext } from './employee-context';
 import { useDispatch } from 'react-redux';
 import { employeeActions } from '../Store';
+import EmployeeList from './EmployeeList';
+import DeleteData from './DeleteData';
 const EmployeeForm = (props) => {
 
    const dispatch = useDispatch();
@@ -31,13 +33,16 @@ const EmployeeForm = (props) => {
         const employeeData = {
             name: enteredName,
             workexp: enteredWE,
-            date: new Date(enteredDate)
-        }
+            dob: new Date(enteredDate),
+            id: Math.random().toString()
+        };
 
         // props.onSaveEmployeeData(employeeData);
         //onSaveEmployeeData(employeeData);
         //dispatch({type:"ADD_EMPLOYEE", payload: employeeData});
+        <DeleteData EmployeeData = {employeeData}/>
         dispatch(employeeActions.addEmployee(employeeData));
+        
         setEnteredName('');
         setEnteredWE('');
         setEnteredDate('');

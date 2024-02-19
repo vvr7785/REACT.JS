@@ -14,14 +14,14 @@ const Employees = (props) => {
     // ReactREdux will automatically sets subscription for this component.
     const items = useSelector(state => state.items);
 
-    const [filteredYear, setFilteredYear] = useState("2020");
+    const [filteredYear, setFilteredYear] = useState("2024");
 
     const filterChangeHandler = selectedYear => {
         setFilteredYear(selectedYear);
     }
 
     const filteredEmployees = items.filter(employee => {
-        return employee.date.getFullYear().toString() === filteredYear;
+        return employee.dob.getFullYear().toString() === filteredYear;
     });
 
     return (

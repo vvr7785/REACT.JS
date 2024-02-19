@@ -7,3 +7,10 @@
     color: white;
     text-align: center;
 }
+.delete{
+    color:white;
+    background-color: red;
+    border:none;
+    padding:10px 7px;
+    border-radius: 3px;
+}

@@ -2,9 +2,9 @@ import {createStore} from 'redux';
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 const DUMP_EMPLOYEES = [
-  {id:1001,name:'Rahul',workexp:2,dob:new Date(2020,5,11)},
-  {id:1002,name:'Shiva',workexp:5,dob:new Date(1996,4,16)},
-  {id:1003,name:'Sudheer',workexp:10,dob:new Date(1987,10,7)}
+  {id:1001,name:'Rahul',workexp:2,dob:new Date(2000,5,11)},
+  {id:1002,name:'Shiva',workexp:5,dob:new Date(2001,4,16)},
+  {id:1003,name:'Sudheer',workexp:10,dob:new Date(2001,10,7)}
 ];
 const initialState = {items:DUMP_EMPLOYEES};
 
@@ -22,8 +22,8 @@ const emplopyeeSlice = createSlice({
     },
 
     removeEmployee(state, action) {
-      const employeeIdToRemove = action.payload;
-          state.items = state.items.filter(employee => employee.id !== employeeIdToRemove);
+      const employeeId = action.payload;
+          state.items = state.items.filter(e => e.id !== employeeId);
     }
   }
 });
